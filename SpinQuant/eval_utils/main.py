@@ -1,13 +1,3 @@
-# coding=utf-8
-# Copyright (c) Meta Platforms, Inc. and affiliates.
-# All rights reserved.
-#
-# This source code is licensed under the license found in the
-# LICENSE file in the root directory of this source tree.
-
-# This code is based on QuaRot(https://github.com/spcl/QuaRot/tree/main/quarot).
-# Licensed under Apache License 2.0.
-
 import torch
 import transformers
 
