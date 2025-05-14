@@ -2,9 +2,7 @@ import torch
 from transformers import LlamaForCausalLM, LlamaConfig
 from dataclasses import dataclass
 
-# ======================
-# Quantization Libraries
-# ======================
+
 class SmoothQuantLinear(torch.nn.Module):
     def _init_(self, in_features, out_features, bits=8, group_size=128):
         super()._init_()
@@ -32,9 +30,7 @@ class SpinQuantLinear(torch.nn.Module):
     def forward(self, x):
         return x @ (self.weight * self.mask).t()
 
-# ======================
-# Hybrid Configuration
-# ======================
+
 @dataclass
 class HybridQuantConfig:
     # Attention layers
@@ -102,9 +98,6 @@ class HybridQuantizedLlamaLayer(torch.nn.Module):
         # Combine
         return attn_out + ffn_out
 
-# ======================
-# Full Hybrid Model
-# ======================
 class HybridQuantizedLlama(LlamaForCausalLM):
     def _init_(self, config, quant_config):
         super()._init_(config)
@@ -118,9 +111,6 @@ class HybridQuantizedLlama(LlamaForCausalLM):
                 self.quant_config
             )
 
-# ======================
-# Example Usage
-# ======================
 if _name_ == "_main_":
     # Load base model
     base_model = LlamaForCausalLM.from_pretrained("huggyllama/llama-7b")
