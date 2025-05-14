@@ -69,11 +69,11 @@ python smoothquant/layer_analysis.py --model <model_name_or_path> [other args]
 
 ### **B. QuaRot**
 
-**Directory:** `quarot2/QuaRot/fake_quant/`
+**Directory:** `QuaRot/quant/`
 
 **Setup:**
 ```bash
-cd quarot2/QuaRot/fake_quant
+cd QuaRot/quant
 pip install -r ../../requirements.txt  # or the appropriate requirements file
 ```
 
