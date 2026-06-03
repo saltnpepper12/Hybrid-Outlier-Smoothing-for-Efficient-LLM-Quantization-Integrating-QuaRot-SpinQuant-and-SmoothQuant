@@ -1,0 +1,20 @@
+# Top-level dependencies for the layer-wise analysis and hybrid assignment.
+#
+# The hybrid assignment stage (hybrid.py) only needs pandas. The per-method
+# analyzers additionally need torch + transformers and the deps below.
+#
+# Each upstream method also ships its own pinned file for exact reproduction:
+#   - QuaRot/requirements.txt      (transformers==4.38.0, torch==2.2.1, ...)
+#   - SpinQuant/requirement.txt    (transformers==4.44.2, ...)
+# If you hit a version conflict, install per-method in separate environments.
+
+torch>=2.2
+transformers>=4.38
+accelerate>=0.27
+datasets>=2.17
+huggingface-hub>=0.20
+sentencepiece>=0.2
+pandas>=2.0
+numpy>=1.24
+matplotlib>=3.7
+tqdm>=4.65

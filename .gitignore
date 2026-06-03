@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+env/
+.env
+
+# Model weights / caches (large, never commit)
+*.pt
+*.bin
+*.safetensors
+act_scales/*.pt
+.cache/
+~/.cache/huggingface/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Generated artifacts (keep the curated ones in Outputs/, ignore scratch)
+*.log
+wandb/
+hybrid_assignment.csv
+layer_analysis_results.csv
+layer_weight_analysis.csv
+*_layer_weight_analysis.csv
+*_layer_analysis_results.csv
